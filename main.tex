@@ -1,0 +1,138 @@
+\documentclass[oneside,final,14pt]{extreport}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usepackage[russian]{babel}
+\usepackage{vmargin}
+\usepackage{multirow}
+\usepackage[resetfonts]{cmap}
+\usepackage{caption}
+\setpapersize{A4}
+\setmarginsrb{2cm}{1.5cm}{1cm}{1.5cm}{0pt}{0mm}{0pt}{13mm}
+\usepackage{indentfirst}
+\sloppy
+
+\newenvironment{compactlist}{
+\begin{list}{{$\bullet$}}{
+  \setlength\partopsep{0pt}
+  \setlength\parskip{0pt}
+  \setlength\parsep{0pt}
+  \setlength\topsep{0pt}
+  \setlength\itemsep{0pt}
+  }
+}{
+  \end{list}
+}
+
+\newenvironment{letterlist}{
+\newcounter{lcounter}
+\begin{list}{\alph{lcounter})}{\usecounter{lcounter}}{
+  \setlength\partopsep{0pt}
+  \setlength\parskip{0pt}
+  \setlength\parsep{0pt}
+  \setlength\topsep{0pt}
+  \setlength\itemsep{0pt}
+  }
+}{
+  \end{list}
+}
+
+\DeclareCaptionFormat{GOSTtable}{#2#1\\#3}
+\DeclareCaptionLabelSeparator{fill}{\hfill}
+\DeclareCaptionLabelFormat{fullparents}{{#1}{~}#2}
+
+\captionsetup[table]{
+format=GOSTtable,
+font={footnotesize},
+labelformat=fullparents,
+labelsep=fill,
+labelfont=it,
+textfont=bf,
+justification=centering,
+singlelinecheck=false
+}
+
+\newcommand{\arrowcircle}[1][]{
+\begin{tikzpicture}[#1]
+
+\draw[->] (0, 0ex) -- (1em, 0ex);
+\draw (1em,0ex) circle (1.2ex);
+
+\end{tikzpicture}
+}
+
+\newcommand{\Section}[1]{
+\refstepcounter{section}
+\section*{\centering #1}
+\addcontentsline{toc}{section}{#1}
+}
+
+\newcommand{\Subsection}[1]{
+\refstepcounter{subsection}
+\subsection*{\centering #1}
+\addcontentsline{toc}{subsection}{#1}
+}
+
+\newcommand{\Subsubsection}[1]{
+\refstepcounter{subsubsection}
+\subsubsection*{\centering #1}
+\addcontentsline{toc}{subsubsection}{#1}
+}
+
+\begin{document}
+
+\begin{titlepage}
+
+\centerline{БЕЛОРУССКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ}
+\centerline{ФАКУЛЬТЕТ РАДИОФИЗИКИ И КОМПЬЮТЕРНЫХ ТЕХНОЛОГИЙ}
+\centerline{\hfill
+\hrulefill \hrulefill \hrulefill \hrulefill \hrulefill \hrulefill
+\hfill}
+
+\vfill
+\vfill
+\vfill
+\vfill
+\vfill
+\vfill
+
+\Large
+\centerline{\bf Лабораторная работа №}
+\begin{centering}
+
+{\bf }
+
+\end{centering}
+
+\vfill
+\vfill
+\vfill
+
+\normalsize
+\begin{flushright}
+
+Выполнил \\
+студент 2 курса 4 группы \\
+Капинос Алексей \\
+Преподаватель \\
+Прокопович И. П.
+\end{flushright}
+
+\vfill
+\vfill
+
+\centerline{Минск~--- 2020}
+
+\end{titlepage}
+\setcounter{page}{2}
+
+{\noindent \bf Цель работы:}%
+
+\Section{Краткая теория}
+
+\Section{Практическая часть}
+
+\clearpage
+
+{\noindent\bf Вывод:}%
+
+\end{document}
