@@ -1,0 +1,60 @@
+\RequirePackage{mathtext}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T2A]{fontenc}
+\RequirePackage[russian]{babel}
+\addto\captionsrussian{% Replace "english" with the language you use
+  \renewcommand{\contentsname}%
+    {Содержание}%
+}
+
+\RequirePackage{indentfirst}
+
+
+%------
+% MATHS
+% -----
+
+
+\RequirePackage{amsmath}
+\RequirePackage{amsthm}
+\RequirePackage{amssymb}
+\RequirePackage{mathtools}
+\numberwithin{equation}{section}
+
+%---------
+% CAPTIONS
+% ---------
+
+%\RequirePackage{chngcntr}
+%\counterwithin{figure}{section}
+
+\RequirePackage{caption}
+\captionsetup{justification=centering}
+\renewcommand{\thefigure}{\thesection.\arabic{figure}}
+\renewcommand{\thetable}{\thesection.\arabic{table}}
+
+%---------
+% GRAPHICS
+% ---------
+
+\RequirePackage{graphicx}
+
+%------
+% LINKS
+% ------
+
+\RequirePackage[breaklinks=true]{hyperref}
+\hypersetup{
+  colorlinks,
+  citecolor=black,
+  filecolor=black,
+  linkcolor=black,
+  urlcolor=black,
+}
+\urlstyle{same}
+
+%-----
+% CODE
+% ----
+
+\RequirePackage{listings}
