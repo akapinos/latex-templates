@@ -25,15 +25,22 @@
 
 \def\@labtitle{Лабораторная работа №}
 \def\@Labtitle{\MakeUppercase{\@labtitle}}
-\newcommand*{\lab}[1]{{\@labtitle} {#1}}
-\newcommand*{\Lab}[1]{{\@Labtitle} {#1}}
+\newcommand*{\labtitle}[1]{{\@labtitle} {#1}}
+\newcommand*{\Labtitle}[1]{{\@Labtitle} {#1}}
 
 \def\@city{Минск}
 \def\@City{\MakeUppercase{\@city}}
 \newcommand*{\city}[1]{\def\@city{#1}}
 
-\let\@num\@empty
-\newcommand\num[1]{\def\@num{#1}}
+\let\@labnum\@empty
+\newcommand\labnum[1]{\def\@labnum{#1}}
+
+\let\@studentyear\@empty
+\newcommand\studentyear[1]{\def\@studentyear{#1}}
+
+\let\@studentgroup\@empty
+\newcommand\studentgroup[1]{\def\@studentgroup{#1}}
+
 \let\@instructor\@empty
 \newcommand\instructor[1]{\def\@instructor{#1}}
 
@@ -43,17 +50,17 @@
          \centerline{\@University}
          \centerline{\@Faculty}
          %\centerline{\@department}
-         \vspace{50mm}
-         \centerline{\Lab{\@num}}
+         \vspace{60mm}
+         \centerline{\Labtitle{\@labnum}}
          \begin{center}
            {\bf \MakeUppercase{\@title}}
          \end{center}
-         \vspace{60mm}
+         \vspace{50mm}
          \normalsize
          \begin{flushleft}%
            \setlength{\leftskip}{80mm}
            Выполнил \\
-           студент 2 курса 4 группы \\
+           студент \@studentyear~курса \@studentgroup~группы \\
            \@author \\
            Преподаватель \\
            \@instructor

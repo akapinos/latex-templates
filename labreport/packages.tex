@@ -1,7 +1,7 @@
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[T2A]{fontenc}
 \RequirePackage[russian]{babel}
-\addto\captionsrussian{% Replace "english" with the language you use
+\addto\captionsrussian{
   \renewcommand{\contentsname}%
     {Содержание}%
 }
@@ -9,34 +9,58 @@
 \RequirePackage{indentfirst}
 \RequirePackage[a4paper,left=35mm,right=15mm,top=20mm,bottom=20mm]{geometry}
 
-%------
+
+\RequirePackage{tikz}
+\newcommand{\arrowcircle}[1][] {
+\begin{tikzpicture}[#1]
+\draw[->] (0, 0ex) -- (1em, 0ex);
+\draw (1em,0ex) circle (1.2ex);
+\end{tikzpicture}
+}
+
+%-------
 % MATHS
-% -----
+%-------
 
 \RequirePackage{amsmath}
 \RequirePackage{amsthm}
 \RequirePackage{amssymb}
 
-\numberwithin{equation}{section}
+%-------
+% LISTS
+%-------
 
-%---------
+\RequirePackage[shortlabels]{enumitem}
+
+%-------
+% FLOAT
+%-------
+
+\RequirePackage{float}
+
+%----------
 % CAPTIONS
-% ---------
+%----------
 
 \RequirePackage{caption}
-\captionsetup{justification=centering}
-\renewcommand{\thefigure}{\thesection.\arabic{figure}}
-\renewcommand{\thetable}{\thesection.\arabic{table}}
+\DeclareCaptionLabelSeparator{emdash}{~--- }
+\captionsetup{%
+  labelsep=emdash,
+  position=bottom,
+  justification=centering,
+}
+\addto\captionsrussian{\renewcommand\figurename{Рисунок}}
 
-%---------
+%----------
 % GRAPHICS
-% ---------
+%----------
 
 \RequirePackage{graphicx}
+\RequirePackage{rotating}
 
-%------
+%-------
 % LINKS
-% ------
+%-------
 
 \RequirePackage[breaklinks=true]{hyperref}
 \hypersetup{
@@ -48,8 +72,8 @@
 }
 \urlstyle{same}
 
-%-----
+%------
 % CODE
-% ----
+%------
 
 \RequirePackage{listings}
