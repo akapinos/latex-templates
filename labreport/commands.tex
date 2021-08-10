@@ -1,0 +1,17 @@
+\newcommand{\Section}[1]{
+\refstepcounter{section}
+\section*{\centering #1}
+\addcontentsline{toc}{section}{#1}
+}
+
+\newcommand{\Subsection}[1]{
+\refstepcounter{subsection}
+\subsection*{\centering #1}
+\addcontentsline{toc}{subsection}{#1}
+}
+
+\newcommand{\Subsubsection}[1]{
+\refstepcounter{subsubsection}
+\subsubsection*{\centering #1}
+\addcontentsline{toc}{subsubsection}{#1}
+}

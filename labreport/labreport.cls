@@ -5,11 +5,17 @@
 \PassOptionsToClass{oneside,final,14pt}{\baseclass}
 \LoadClass{\baseclass}
 
+%--------
+% INPUTS
+%--------
+
+\input{environments.tex}
+\input{commands.tex}
 \input{packages.tex}
 
 %------------
 % TITLE PAGE
-% -----------
+%------------
 
 \def\@university{Белорусский Государственный Университет}
 \def\@University{\MakeUppercase{\@university}}
